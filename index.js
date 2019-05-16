@@ -20,7 +20,7 @@ const dependences = {
 }
 app.use(bodyParser.urlencoded({ extended: false}))
 
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/', (req, res) => res.render('home'))
 app.use('/pessoas', pessoasRouter(dependences))
