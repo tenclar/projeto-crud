@@ -1,0 +1,46 @@
+<% include ../partials/header.ejs %>
+<div class="container">
+    <h1 class="text-center" >Pessoas</h1>
+    <div class="row">
+        <div class="col-xs-2">
+
+        </div>
+        <div class="col-xs-10">
+            
+            
+        <table class="table table-hover ">
+            
+            <tr style="background-color: black; color: white; text-align: center" >
+                <th style="text-align: center" >  <a href="/pessoas/novo" title="novo" class="btn btn-primary"><span class="glyphicon glyphicon-asterisk"></span></a></th>
+                <th style="text-align: center">Nome</th>
+                <th style="text-align: center">Data Nascimento</th>
+                <th style="text-align: center">Cargo</th>
+            </tr>
+         
+            <% pessoas.map( pessoa => { %>
+            <tr class="text-center"  >     
+                 <td>
+                    <div class="btn-group" role="group" aria-label="Ações">
+                        <a href="/pessoas/alterar/<%= pessoa.id %>" class="btn btn-success"   title="Editar" >
+                            <span class="glyphicon glyphicon-edit"></span>
+                        </a>
+                        <a href="/pessoas/excluir/<%= pessoa.id %>"
+                             class="btn btn-danger"
+                             title="excluir"
+                              onclick="return confirm('Deseja realmente excluir?')" >
+                              <span class="glyphicon glyphicon-remove"></span>
+                        </a>                    
+                     </div>
+                </td>
+                <td><%=pessoa.nome  %></td>
+                <td><%=pessoa.nascimento  %></td>
+                <td><%=pessoa.cargo  %></td>
+               
+            </tr>
+            <% }) %>
+          
+        </table>
+    </div>
+    </div>
+</div>
+  <% include ../partials/footer.ejs %>

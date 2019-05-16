@@ -1,0 +1,58 @@
+<% include ../partials/header.ejs %>
+
+<div class="container">
+    <h1 class="text-center" >Editar Pessoas</h1>
+    <div class="row">
+        <div class="col-xs-2">
+
+        </div>
+        <div class="col-xs-8">
+                <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Formulário de Cadastro
+                        </div>
+                        <div class="panel-body">
+                <form method="POST" >
+                        <div class="form-group">
+                          <label for="nome">Nome</label>
+                          <input type="text" 
+                            class="form-control form-control-lg"
+                            id="nome" 
+                            name="nome"
+                            value="<%= pessoa.nome %>"
+                            aria-describedby="nomeCompleto" 
+                            placeholder="Entre com nome completo" >                          
+                        </div>
+                        <div class="form-group">
+                          <label for="nascimento">Nascimento</label>
+                          <input type="date" 
+                            class="form-control  form-control-lg"
+                            id="nascimento" 
+                            name="nascimento"
+                            placeholder="data de nascimento"
+                            value="<%= pessoa.nascimento %>"
+                            >
+                        </div>
+                        <div class="form-group">
+                                <label for="cargo">Cargo</label>
+                                <input type="text" 
+                                  class="form-control  form-control-lg"
+                                  id="cargo" 
+                                  name="cargo"
+                                  placeholder="Informe o cargo"
+                                  value="<%= pessoa.cargo %>"
+                                  >
+                              </div>
+                        <hr/>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                        <a href="/pesssoas" class="btn btn-danger">Cancelar</a>
+            </form>
+            </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer.ejs %>
